@@ -157,4 +157,16 @@ return {
       },
     },
   },
+  {
+    "folke/trouble.nvim",
+    opts = function(_, opts)
+      opts = opts or {}
+      opts.modes = opts.modes or {}
+      opts.modes.symbols = opts.modes.symbols or {}
+      opts.modes.symbols.win = vim.tbl_deep_extend("force", opts.modes.symbols.win or {}, {
+        size = 40,
+      })
+      return opts
+    end,
+  },
 }
