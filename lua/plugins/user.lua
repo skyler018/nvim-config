@@ -1,5 +1,13 @@
 return {
-  { "RRethy/base16-nvim", lazy = false, priority = 1000 },
+  -- { "RRethy/base16-nvim", lazy = false, priority = 1000 },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+    },
+  },
   -- 使用 Snacks 作为统一 picker（提供 `<leader>/`、`<leader>sw` 等搜索入口）
   { import = "lazyvim.plugins.extras.editor.snacks_picker" },
   {
@@ -7,7 +15,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      colorscheme = "base16-default-dark",
+      colorscheme = "tokyonight",
     },
   },
   {
