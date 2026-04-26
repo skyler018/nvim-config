@@ -5,7 +5,7 @@ local function notify(msg, level)
 end
 
 local function picker_available()
-  return package.loaded["snacks"] or package.loaded["snacks.picker"] or pcall(require, "snacks")
+  return package.loaded["snacks"] ~= nil or package.loaded["snacks.picker"] ~= nil
 end
 
 local function to_file_items(paths, cwd)

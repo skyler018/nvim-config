@@ -11,14 +11,6 @@ return {
   -- 使用 Snacks 作为统一 picker（提供 `<leader>/`、`<leader>sw` 等搜索入口）
   { import = "lazyvim.plugins.extras.editor.snacks_picker" },
   {
-    "LazyVim/LazyVim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      colorscheme = "tokyonight",
-    },
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       opts = opts or {}
@@ -35,15 +27,6 @@ return {
 
       opts.ensure_installed =
         add_unique(opts.ensure_installed, { "go", "gomod", "gosum", "gowork", "c", "lua", "python" })
-
-      -- 保持与你之前的偏好一致（可选，但无害）
-      --opts.sync_install = false
-      --opts.auto_install = true
-      --opts.ignore_install = { "javascript" }
-      --opts.highlight = vim.tbl_deep_extend("force", opts.highlight or {}, {
-      --  enable = true,
-      --  additional_vim_regex_highlighting = false,
-      --})
 
       return opts
     end,

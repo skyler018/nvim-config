@@ -2,13 +2,6 @@ return {
   {
     "folke/snacks.nvim",
     keys = {
-      --{
-      --  "<leader><space>",
-      --  function()
-      --    require("config.regex_files").open()
-      --  end,
-      --  desc = "Regex Files",
-      --},
       {
         "<leader>ff",
         function()
