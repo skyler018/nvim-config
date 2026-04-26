@@ -49,4 +49,10 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   group = aug,
   callback = apply_transparent_background,
 })
-
+--- 兜底：如果某些插件在启动后再改写高亮，VimEnter 再补一次。
+vim.api.nvim_create_autocmd("VimEnter", {
+  group = aug,
+  callback = function()
+    vim.schedule(apply_transparent_background)
+  end,
+})
