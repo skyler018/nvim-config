@@ -26,7 +26,7 @@ return {
       end
 
       opts.ensure_installed =
-        add_unique(opts.ensure_installed, { "go", "gomod", "gosum", "gowork", "c", "lua", "python" })
+        add_unique(opts.ensure_installed, { "go", "gomod", "gosum", "gowork", "c", "lua", "python", "latex" })
 
       return opts
     end,
@@ -88,7 +88,13 @@ return {
     "MeanderingProgrammer/render-markdown.nvim",
     ft = { "markdown" },
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons", "nvim-mini/mini.nvim" },
-    opts = {},
+  },
+  {
+    "kais-radwan/ascii-mermaid",
+    ft = { "markdown" },
+    opts = {
+      display_mode = "inline",
+    },
   },
   {
     "folke/sidekick.nvim",
@@ -121,6 +127,12 @@ return {
       },
       scroll = {
         enabled = false, -- 关闭 Smooth Scrolling
+      },
+      image = {
+        doc = {
+          -- WezTerm 不支持行内图片渲染，用浮动窗口代替
+          inline = false,
+        },
       },
       picker = {
         sources = {
