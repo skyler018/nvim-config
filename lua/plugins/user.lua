@@ -162,6 +162,9 @@ return {
   },
   {
     "folke/trouble.nvim",
+    keys = {
+      { "<leader>cs", false },
+    },
     opts = function(_, opts)
       opts = opts or {}
       opts.modes = opts.modes or {}
