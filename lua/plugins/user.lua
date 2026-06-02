@@ -6,6 +6,36 @@ return {
     priority = 1000,
     opts = {
       transparent = true,
+      on_colors = function(colors)
+        -- Ghostty default (StyleDark) palette
+        colors.bg = "#292c33"
+        colors.bg_dark = "#1d1f21"
+        colors.bg_highlight = "#363a43"
+        colors.fg = "#ffffff"
+        colors.fg_dark = "#c5c8c6"
+        colors.fg_gutter = "#666666"
+        colors.black = "#1d1f21"
+        colors.border = "#666666"
+        colors.comment = "#666666"
+
+        colors.red = "#bf6b69"
+        colors.red1 = "#c55757"
+        colors.orange = "#e9c880"
+        colors.yellow = "#e9c880"
+        colors.yellow1 = "#e1c65e"
+        colors.green = "#b7bd73"
+        colors.green1 = "#bcc95f"
+        colors.cyan = "#95bdb7"
+        colors.cyan1 = "#83beb1"
+        colors.blue = "#88a1bb"
+        colors.blue1 = "#83a5d6"
+        colors.blue2 = "#88a1bb"
+        colors.blue5 = "#83a5d6"
+        colors.purple = "#ad95b8"
+        colors.magenta = "#ad95b8"
+        colors.pink = "#bc99d4"
+        colors.teal = "#83beb1"
+      end,
     },
   },
   -- 使用 Snacks 作为统一 picker（提供 `<leader>/`、`<leader>sw` 等搜索入口）
@@ -158,6 +188,18 @@ return {
           },
         },
       },
+    },
+  },
+  {
+    "mg979/vim-visual-multi",
+    branch = "master",
+    event = "VeryLazy",
+    init = function()
+      vim.g.VM_default_mappings = 0
+      vim.g.VM_mouse_mappings = 1
+    end,
+    keys = {
+      { "<C-n>", "<Plug>(VM-Add-Cursor-At-Pos)", mode = "n", desc = "Add cursor at position" },
     },
   },
   {
