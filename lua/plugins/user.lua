@@ -152,6 +152,9 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
+      notifier = {
+        top_down = false,
+      },
       dashboard = {
         enabled = false, -- 禁用 snacks 的 dashboard 模块
       },
